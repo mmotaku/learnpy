@@ -1,10 +1,10 @@
 # for string
-def traversal_str(str):
-    for i in range(len(str)):
-        print(str[i], end=' ')
+def traversal_str(s):
+    for i in range(len(s)):
+        print(s[i], end=' ')
     print()
 
-    for elem in str:
+    for elem in s:
         print(elem, end=' ')
     print()
 
@@ -38,13 +38,13 @@ def traversal_map(m):
 
 
 # for set
-def traversal_set(m):
-    for elem in m:
+def traversal_set(s):
+    for elem in s:
         print(elem)
 
 
-str = 'Hello, world'
-traversal_str(str)
+s = 'Hello, world'
+traversal_str(s)
 
 lst = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 traversal_list(lst)
