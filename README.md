@@ -4,3 +4,4 @@
 |find.py| how to find value in string, list, tuple, map, set|
 |count.py| how to get count of string, list, tuple, map, set|
 |sum.py| how to calculate sum of element list, tuple, map, set|
+|learn_json.py| how to load and dump for json|
