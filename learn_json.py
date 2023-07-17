@@ -36,6 +36,9 @@ def write_html():
     squad_name = super_heroes['squadName']
     home_town = f"Hometown: {super_heroes['homeTown']} // Formed: {super_heroes['formed']}"
 
+    members = super_heroes['members']
+
+
     html = f'''<!DOCTYPE html>
   <html lang="en-us">
     <head>
@@ -55,7 +58,17 @@ def write_html():
         </header>
 
         <section>
-
+          <article>
+            <h2>{members[0]['name']}</h2>
+            <p>Secret identity: {members[0]['secretIdentity']}</p>
+            <p>Age: {members[0]['age']}</p>
+            <p>Superpowers:</p>
+            <ul>
+              <li>{members[0]['powers'][0]}</li>
+              <li>{members[0]['powers'][1]}</li>
+              <li>{members[0]['powers'][2]}</li>
+            </ul>
+          </article>
         </section>
 
         <script>
