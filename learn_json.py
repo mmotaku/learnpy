@@ -38,7 +38,6 @@ def write_html():
 
     members = super_heroes['members']
 
-
     html = f'''<!DOCTYPE html>
   <html lang="en-us">
     <head>
@@ -67,6 +66,30 @@ def write_html():
               <li>{members[0]['powers'][0]}</li>
               <li>{members[0]['powers'][1]}</li>
               <li>{members[0]['powers'][2]}</li>
+            </ul>
+          </article>
+          <article>
+            <h2>{members[1]['name']}</h2>
+            <p>Secret identity: {members[1]['secretIdentity']}</p>
+            <p>Age: {members[1]['age']}</p>
+            <p>Superpowers:</p>
+            <ul>
+              <li>{members[1]['powers'][0]}</li>
+              <li>{members[1]['powers'][1]}</li>
+              <li>{members[1]['powers'][2]}</li>
+            </ul>
+          </article>
+          <article>
+            <h2>{members[2]['name']}</h2>
+            <p>Secret identity: {members[2]['secretIdentity']}</p>
+            <p>Age: {members[2]['age']}</p>
+            <p>Superpowers:</p>
+            <ul>
+              <li>{members[2]['powers'][0]}</li>
+              <li>{members[2]['powers'][1]}</li>
+              <li>{members[2]['powers'][2]}</li>
+              <li>{members[2]['powers'][3]}</li>
+              <li>{members[2]['powers'][4]}</li>
             </ul>
           </article>
         </section>
