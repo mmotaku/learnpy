@@ -1,0 +1,24 @@
+{
+    "calculations": [
+        {
+            "left": 1,
+            "opt": "+",
+            "right": 1
+        },
+        {
+            "left": 2,
+            "opt": "-",
+            "right": 1
+        },
+        {
+            "left": 3,
+            "opt": "*",
+            "right": 2
+        },
+        {
+            "left": 4,
+            "opt": "/",
+            "right": 2
+        }
+    ]
+}
