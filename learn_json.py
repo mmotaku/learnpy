@@ -23,6 +23,34 @@ def load_sample_array():
     print(persons[0]['powers'][0])
 
 
+def generate_powers(powers):
+    all_str = '<ul>'
+    for power in powers:
+        str = f''' 
+        <li>{power}</li>
+      '''
+        all_str += str
+    all_str += '</ul>'
+    return all_str
+
+
+def generate_articles(members):
+    all_str = ''
+    for member in members:
+        ul = generate_powers(member['powers'])
+        str = f'''
+            <article>
+              <h2>{member['name']}</h2>
+              <p>Secret identity: {member['secretIdentity']}</p>
+              <p>Age: {member['age']}</p>
+              <p>Superpowers:</p>
+              {ul}
+            </article>
+            '''
+        all_str += str
+    return all_str
+
+
 def write_html():
     r = requests.get(
         'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json'
@@ -37,6 +65,8 @@ def write_html():
     home_town = f"Hometown: {super_heroes['homeTown']} // Formed: {super_heroes['formed']}"
 
     members = super_heroes['members']
+
+    articles = generate_articles(members)
 
     html = f'''<!DOCTYPE html>
   <html lang="en-us">
@@ -57,41 +87,7 @@ def write_html():
         </header>
 
         <section>
-          <article>
-            <h2>{members[0]['name']}</h2>
-            <p>Secret identity: {members[0]['secretIdentity']}</p>
-            <p>Age: {members[0]['age']}</p>
-            <p>Superpowers:</p>
-            <ul>
-              <li>{members[0]['powers'][0]}</li>
-              <li>{members[0]['powers'][1]}</li>
-              <li>{members[0]['powers'][2]}</li>
-            </ul>
-          </article>
-          <article>
-            <h2>{members[1]['name']}</h2>
-            <p>Secret identity: {members[1]['secretIdentity']}</p>
-            <p>Age: {members[1]['age']}</p>
-            <p>Superpowers:</p>
-            <ul>
-              <li>{members[1]['powers'][0]}</li>
-              <li>{members[1]['powers'][1]}</li>
-              <li>{members[1]['powers'][2]}</li>
-            </ul>
-          </article>
-          <article>
-            <h2>{members[2]['name']}</h2>
-            <p>Secret identity: {members[2]['secretIdentity']}</p>
-            <p>Age: {members[2]['age']}</p>
-            <p>Superpowers:</p>
-            <ul>
-              <li>{members[2]['powers'][0]}</li>
-              <li>{members[2]['powers'][1]}</li>
-              <li>{members[2]['powers'][2]}</li>
-              <li>{members[2]['powers'][3]}</li>
-              <li>{members[2]['powers'][4]}</li>
-            </ul>
-          </article>
+          {articles}
         </section>
 
         <script>
