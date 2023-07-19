@@ -101,7 +101,35 @@ def write_html():
     f.close()
 
 
+def load_calc():
+    f = open('calc.json')
+    calc = f.read()
+    f.close()
+    operation = json.loads(calc)
+    calculations = operation['calculations']
+    results = []
+
+    for calculation in calculations:
+        a = calculation['left']
+        b = calculation['right']
+        op = calculation['opt']
+        if op == '+':
+            results.append({'result': a + b})
+        elif op == '-':
+            results.append({'result': a - b})
+        elif op == '*':
+            results.append({'result': a * b})
+        elif op == '/':
+            results.append({'result': a / b})
+
+    s = json.dumps(results)
+    f = open('results.json', 'w')
+    f.write(s)
+    f.close()
+
+
 load_sample_file()
 load_sample_array()
 
 write_html()
+load_calc()
